@@ -26,7 +26,7 @@ This repository is meant to help people use `zrok` to run [Palworld](https://sto
 
 	  powershell.exe -ExecutionPolicy Bypass -File start-client.ps1
 * when the `start-client.ps1` script executes, you'll be prompted to enter the secret token from the server:
-  ![image](https://github.com/dovholuknf/minecraft-zrok-bootstrapper/assets/46322585/7dfb8105-4f81-4345-a2c1-ad19b6f43ca2)
+  ![image](https://github.com/dovholuknf/palworld-zrok-bootstrapper/assets/46322585/0f8ab83d-f81e-40d3-87f8-fed81d47f25c)
 
 ### YouTube Video Overview:
 [<img src="https://img.youtube.com/vi/Sq43hp6n9rE/hqdefault.jpg">](https://youtu.be/Sq43hp6n9rE)
