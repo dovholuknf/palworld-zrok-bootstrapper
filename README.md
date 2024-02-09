@@ -10,7 +10,7 @@ This repository is meant to help people use `zrok` to run [Palworld](https://sto
 ### On the Palworld server:
 * `zrok enable` the server. see [Enabling Your zrok Environment](https://docs.zrok.io/docs/getting-started/#enabling-your-zrok-environment)
 * download: [the start-server script](https://raw.githubusercontent.com/dovholuknf/palworld-zrok-bootstrapper/main/start-server.ps1)
-* edit the script and update the PATH_TO_ZROK with the location of your zrok.exe
+* edit the start-server script and update the PATH_TO_ZROK with the location of your zrok.exe
 * run `start-server.ps1` (the script is not signed, research this if you don't understand it):
 
       powershell.exe -ExecutionPolicy Bypass -File start-server.ps1
