@@ -1,6 +1,6 @@
 $PATH_TO_ZROK="C:\zrok\zrok.exe"
 $PALWORLD_SERVER_IP = "127.0.0.1"
-$PALWORLD_SERVER_PORT = "25565"
+$PALWORLD_SERVER_PORT = "8211"
 
 do {
     if (Test-Path $PATH_TO_ZROK -PathType Leaf) {
