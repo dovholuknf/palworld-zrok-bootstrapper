@@ -29,5 +29,5 @@ This repository is meant to help people use `zrok` to run [Palworld](https://sto
   ![image](https://github.com/dovholuknf/palworld-zrok-bootstrapper/assets/46322585/0f8ab83d-f81e-40d3-87f8-fed81d47f25c)
 
 ### YouTube Video Overview:
-[<img src="https://img.youtube.com/vi/Sq43hp6n9rE/hqdefault.jpg">](https://youtu.be/Sq43hp6n9rE)
+[<img src="https://img.youtube.com/vi/kLv72_vjz3Q/hqdefault.jpg">](https://youtu.be/kLv72_vjz3Q)
 	  
