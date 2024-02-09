@@ -1,4 +1,4 @@
-$PATH_TO_ZROK="C:\minecraft\zrok.exe"
+$PATH_TO_ZROK="C:\zrok\zrok.exe"
 do {
     if (Test-Path $PATH_TO_ZROK -PathType Leaf) {
         break
@@ -9,6 +9,12 @@ do {
         $PATH_TO_ZROK = Read-Host "Enter the correct path"
     }
 } while ($true)
+
+if (Test-Path "$env:USERPROFILE\.zrok\environment.json" -PathType Leaf) {
+} else {
+    Write-Host -ForegroundColor Red "zrok not enabled! enable zrok before continuing!"
+    return
+}
 
 $PRIVATE_ACCESS_TOKEN = Read-Host "Enter the private access token"
 

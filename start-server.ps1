@@ -1,8 +1,6 @@
-$PATH_TO_ZROK="C:\path\to\zrok\zrok.exe"
-$INITIAL_MEMORY_MB = 1024
-$MAX_MEMORY_MB = 1024
-$MINECRAFT_SERVER_IP = "127.0.0.1"
-$MINECRAFT_SERVER_PORT = "25565"
+$PATH_TO_ZROK="C:\zrok\zrok.exe"
+$PALWORLD_SERVER_IP = "127.0.0.1"
+$PALWORLD_SERVER_PORT = "25565"
 
 do {
     if (Test-Path $PATH_TO_ZROK -PathType Leaf) {
@@ -28,7 +26,7 @@ $jsonObject = Get-Content -Path "$env:USERPROFILE\.zrok\environment.json" -Raw |
 $zid = $jsonObject.ziti_identity
 
 # Strip anything not alphanumeric
-$RESERVED_SHARE = (($zid -replace '[^a-zA-Z0-9]', '') + "minecraft").ToLower()
+$RESERVED_SHARE = (($zid -replace '[^a-zA-Z0-9]', '') + "PALWORLD").ToLower()
 
 # Convert JSON to PowerShell object
 $jsonObject = Invoke-Expression "$PATH_TO_ZROK overview" | ConvertFrom-Json
@@ -42,22 +40,22 @@ if ($targetEnvironment) {
         Write-Host "Found share with token $RESERVED_SHARE in environment $zid. No need to reserve..."
     } else {
         Write-Host "Reserving share: $RESERVED_SHARE"
-        Invoke-Expression "$PATH_TO_ZROK reserve private ${MINECRAFT_SERVER_IP}:${MINECRAFT_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
+        Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
     }
 } else {
 	Write-Host "UNEXPECTED. Trying to reserve share: $RESERVED_SHARE"
-  Invoke-Expression "$PATH_TO_ZROK reserve private ${MINECRAFT_SERVER_IP}:${MINECRAFT_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
+  Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
 }
 
 $OriginalProgressPreference = $Global:ProgressPreference
 $Global:ProgressPreference = 'SilentlyContinue'
-while (-not (Test-NetConnection -ComputerName $MINECRAFT_SERVER_IP -Port $MINECRAFT_SERVER_PORT -InformationLevel Quiet)) {
-    Write-Host "Waiting for port $MINECRAFT_SERVER_PORT to respond..."
+while (-not (Test-NetConnection -ComputerName $PALWORLD_SERVER_IP -Port $PALWORLD_SERVER_PORT -InformationLevel Quiet)) {
+    Write-Host "Waiting for port $PALWORLD_SERVER_PORT to respond..."
     Start-Sleep -Seconds 5
 }
 $Global:ProgressPreference = $OriginalProgressPreference
 
-Write-Host "Port $MINECRAFT_SERVER_PORT is now open. Starting zrok share"
+Write-Host "Port $PALWORLD_SERVER_PORT is now open. Starting zrok share"
 
 Start-Process -FilePath "$PATH_TO_ZROK" `
     -ArgumentList "share reserved $RESERVED_SHARE" `
