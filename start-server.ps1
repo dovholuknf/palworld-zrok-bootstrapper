@@ -47,8 +47,6 @@ if ($targetEnvironment) {
   Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
 }
 
-$Global:ProgressPreference = $OriginalProgressPreference
-
 Write-Host "Make sure the Palworld dedicated server is running and on port: $PALWORLD_SERVER_PORT!!!"
 Write-Host "Starting zrok share in 5 seconds..."
 Start-Sleep -Seconds 5
