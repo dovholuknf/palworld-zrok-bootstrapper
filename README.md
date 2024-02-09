@@ -16,7 +16,7 @@ This repository is meant to help people use `zrok` to run [Palworld](https://sto
       powershell.exe -ExecutionPolicy Bypass -File start-server.ps1
 
 * after `zrok` starts, there will be a private token that you need to distribute to the people you want to allow to access the Palworld server:
-* ![image](https://github.com/dovholuknf/minecraft-zrok-bootstrapper/assets/46322585/8bdc6d16-5569-43f8-b6a5-c96653b35a5d)
+* ![image](https://github.com/dovholuknf/palworld-zrok-bootstrapper/assets/46322585/2774937f-e474-4d08-89ec-d50fd5b70d50)
 
 ### On the Palworld clients:
 * `zrok enable` the client. see [Enabling Your zrok Environment](https://docs.zrok.io/docs/getting-started/#enabling-your-zrok-environment)
