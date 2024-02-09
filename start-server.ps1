@@ -1,6 +1,6 @@
 $PATH_TO_ZROK="C:\zrok\zrok.exe"
 $PALWORLD_SERVER_IP = "127.0.0.1"
-$PALWORLD_SERVER_PORT = "8211"
+$PALWORLD_PORT = "8211"
 
 do {
     if (Test-Path $PATH_TO_ZROK -PathType Leaf) {
@@ -40,14 +40,14 @@ if ($targetEnvironment) {
         Write-Host "Found share with token $RESERVED_SHARE in environment $zid. No need to reserve..."
     } else {
         Write-Host "Reserving share: $RESERVED_SHARE"
-        Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
+        Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
     }
 } else {
 	Write-Host "UNEXPECTED. Trying to reserve share: $RESERVED_SHARE"
-  Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
+  Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
 }
 
-Write-Host "Make sure the Palworld dedicated server is running and on port: $PALWORLD_SERVER_PORT!!!"
+Write-Host "Make sure the Palworld dedicated server is running and on port: $PALWORLD_PORT!!!"
 Write-Host "Starting zrok share in 5 seconds..."
 Start-Sleep -Seconds 5
 
