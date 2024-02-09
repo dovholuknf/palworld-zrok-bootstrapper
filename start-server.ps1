@@ -40,11 +40,11 @@ if ($targetEnvironment) {
         Write-Host "Found share with token $RESERVED_SHARE in environment $zid. No need to reserve..."
     } else {
         Write-Host "Reserving share: $RESERVED_SHARE"
-        Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
+        Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
     }
 } else {
 	Write-Host "UNEXPECTED. Trying to reserve share: $RESERVED_SHARE"
-  Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode tcpTunnel --unique-name $RESERVED_SHARE"
+  Invoke-Expression "$PATH_TO_ZROK reserve private ${PALWORLD_SERVER_IP}:${PALWORLD_SERVER_PORT} --backend-mode udpTunnel --unique-name $RESERVED_SHARE"
 }
 
 $OriginalProgressPreference = $Global:ProgressPreference
