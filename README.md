@@ -8,7 +8,7 @@ This repository is meant to help people use `zrok` to run [Palworld](https://sto
 
 ### Prerequisites
 * follow the [Palworld tech guide](https://tech.palworldgame.com/dedicated-server-guide) to install the Palworld dedicated server
-* download [the latest zrok for windows](https://github.com/openziti/zrok/releases/latest) (zrok_0.4.23_windows_amd64.tar.gz as of feb 9 2024)
+* download [the latest zrok v1 for windows (as of mar-30-2026 1.1.10)](https://github.com/openziti/zrok/releases/tag/v1.1.10) **do not download zrok2**
 * use windows explorer (win11+) or 7zip or something to ungzip and untar the download
 * put the zrok.exe somewhere you can find, for example `c:\zrok\zrok.exe`
 * invite yourself to zrok using: `zrok invite`. see https://docs.zrok.io/docs/getting-started/#generating-an-invitation
